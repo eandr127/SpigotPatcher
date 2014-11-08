@@ -148,7 +148,6 @@ public class Main
         else  {
             patch = new File(args[1]);
         }
-        System.out.println(patch.getAbsoluteFile());
         patchSafe( new PrintWriter( System.out ), originalJar, patch, new File( args[2] ) );
     }
     
