@@ -16,7 +16,7 @@ Changelog
 
 Download
 --------
-You can grab downloads of current and past versions from our [Jenkins server](http://ci.md-5.net/job/SpigotPatcher/).
+To get version 1.1.0 of this fork of SpigotPatcher you can go to [this](https://www.dropbox.com/s/baa4jt65cs0p5yv/SpigotPatcher.jar?dl=1) link.
 
 TODO
 ----
