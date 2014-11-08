@@ -40,7 +40,7 @@ public class Main
             return;
         }
 
-        if ( args.length < 2 )
+        if ( args.length < 3 )
         {
             System.out.println( "Welcome to the Spigot patch applicator." );
             System.out.println( "In order to use this tool you will need to specify three command line arguments as follows:" );
