@@ -29,6 +29,7 @@ import net.md_5.jbeat.Patcher;
 public class Main
 {
 
+    public static final File path = new File("C:\\Users\\" + System.getProperty("user.name") + "\\AppData\\Local\\SpigotPatcherTMP\\");
     static boolean downloadLatest;
     static boolean useInternal;
 
@@ -143,22 +144,22 @@ public class Main
             originalJar = new File(args[0]);
         }
         if(downloadLatest) {
-            patch = new File("C:\\spigotTMP\\" + downloadPatch().getName());
+            patch = new File(path.getAbsoluteFile() + "\\" + downloadPatch().getName());
         }
         else  {
             patch = new File(args[1]);
         }
+        System.out.println(patch.getAbsoluteFile());
         patchSafe( new PrintWriter( System.out ), originalJar, patch, new File( args[2] ) );
     }
     
     private static File makeOriginalJar() {      
-        File tmpFolder = new File("C:\\spigotTMP");
-        tmpFolder.mkdir();
-        File baseFile = loadFile("/Base.File", "C:\\spigotTMP\\Base.File"); 
-        File patch = loadFile("/Base-Patch.bps", "C:\\spigotTMP\\Base-Patch.bps");
+        path.mkdir();
+        File baseFile = loadFile("/Base.File", path.getAbsoluteFile() + "\\" + "Base.File"); 
+        File patch = loadFile("/Base-Patch.bps", path.getAbsoluteFile() + "\\" + "Base-Patch.bps");
         
-        patchSafe(new PrintWriter(System.out), baseFile, patch, new File("C:\\spigotTMP\\original.jar"));
-        File originalJar = new File("C:\\spigotTMP\\original.jar");
+        patchSafe(new PrintWriter(System.out), baseFile, patch, new File(path.getAbsoluteFile() + "\\" + "original.jar"));
+        File originalJar = new File(path.getAbsoluteFile() + "\\" + "original.jar");
         
         
         return originalJar;
@@ -217,7 +218,7 @@ public class Main
 
             File file = new File(allPatches.get(allPatches.size() - 1));
             BufferedInputStream bis = new BufferedInputStream(con.getInputStream());
-            BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream("C:\\spigotTMP\\" + file.getName()));
+            BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream(path.getAbsoluteFile() + "\\" + file.getName()));
             int i = 0;
             while ((i = bis.read()) != -1) {
                 bos.write(i);
@@ -327,7 +328,6 @@ public class Main
     }    
     
     static public String getOfflineFile() {
-        File path = new File("C:\\spigotTMP");
         int date = 0;
         char rev = 0;
         if( path.exists() ) {
@@ -349,7 +349,7 @@ public class Main
                 }
             }
         }       
-        File f = new File("C:\\spigotTMP\\spigot-" + date + rev + ".bps");
+        File f = new File(path.getAbsoluteFile() + "\\" + "spigot-" + date + rev + ".bps");
         if(f.exists())
             return "spigot-" + date + rev + ".bps";
         else
