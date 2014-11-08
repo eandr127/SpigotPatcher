@@ -10,6 +10,7 @@ See the [initial release announcement](http://www.spigotmc.org/threads/29091/) o
 Changelog
 ---------
 
+* **1.1.0**: Added automatic patching option on command line
 * **1.0.1**: Check file read and write permissions before beginning patch process. 
 * **1.0.0**: Initial Release
 
