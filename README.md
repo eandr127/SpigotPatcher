@@ -7,6 +7,8 @@ Usage
 -----
 See the [initial release announcement](http://www.spigotmc.org/threads/29091/) or [this wiki page](http://www.spigotmc.org/wiki/spigot-patcher/) for detailed usage instructions on how to use SpigotPatcher. For command line invocation, simply run the program without any arguments.
 
+For automatic patching use the command "java -jar SpigotPatcher.jar -i -dl OutputFile.jar
+
 Changelog
 ---------
 
