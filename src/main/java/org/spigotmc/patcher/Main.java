@@ -81,11 +81,6 @@ public class Main
             console.println( "Specified patch file " + patchFile + " does not exist or cannot be read!!" );
             return;
         }
-        if ( outputFile.exists() )
-        {
-            console.println( "Specified output file " + outputFile + " exists, please remove it before running this program!" );
-            return;
-        }
         if ( !outputFile.createNewFile() )
         {
             console.println( "Could not create specified output file " + outputFile + " please ensure that it is in a valid directory which can be written to." );
